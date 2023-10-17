@@ -32,12 +32,12 @@
             lblFilterCategory = new Label();
             cbxFilterCategory = new ComboBox();
             gbxFilterName = new GroupBox();
-            lblFilterSearch = new Label();
             tbxFilterName = new TextBox();
-            dataGridView1 = new DataGridView();
+            lblFilterSearch = new Label();
+            dgwProducts = new DataGridView();
             gbxFilterCatogeries.SuspendLayout();
             gbxFilterName.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgwProducts).BeginInit();
             SuspendLayout();
             // 
             // gbxFilterCatogeries
@@ -68,6 +68,7 @@
             cbxFilterCategory.Name = "cbxFilterCategory";
             cbxFilterCategory.Size = new Size(222, 23);
             cbxFilterCategory.TabIndex = 0;
+            cbxFilterCategory.SelectedIndexChanged += cbxFilterCategory_SelectedIndexChanged;
             // 
             // gbxFilterName
             // 
@@ -80,6 +81,14 @@
             gbxFilterName.TabStop = false;
             gbxFilterName.Text = "Filter By Name";
             // 
+            // tbxFilterName
+            // 
+            tbxFilterName.Location = new Point(105, 33);
+            tbxFilterName.Name = "tbxFilterName";
+            tbxFilterName.Size = new Size(222, 23);
+            tbxFilterName.TabIndex = 2;
+            tbxFilterName.TextChanged += tbxFilterName_TextChanged;
+            // 
             // lblFilterSearch
             // 
             lblFilterSearch.AutoSize = true;
@@ -90,37 +99,31 @@
             lblFilterSearch.TabIndex = 1;
             lblFilterSearch.Text = "Name :";
             // 
-            // tbxFilterName
+            // dgwProducts
             // 
-            tbxFilterName.Location = new Point(105, 33);
-            tbxFilterName.Name = "tbxFilterName";
-            tbxFilterName.Size = new Size(222, 23);
-            tbxFilterName.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 216);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(814, 213);
-            dataGridView1.TabIndex = 3;
+            dgwProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwProducts.Location = new Point(12, 216);
+            dgwProducts.Name = "dgwProducts";
+            dgwProducts.RowTemplate.Height = 25;
+            dgwProducts.Size = new Size(814, 213);
+            dgwProducts.TabIndex = 3;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 441);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgwProducts);
             Controls.Add(gbxFilterName);
             Controls.Add(gbxFilterCatogeries);
             Name = "Form1";
             Text = "Products";
+            Load += Form1_Load;
             gbxFilterCatogeries.ResumeLayout(false);
             gbxFilterCatogeries.PerformLayout();
             gbxFilterName.ResumeLayout(false);
             gbxFilterName.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgwProducts).EndInit();
             ResumeLayout(false);
         }
 
@@ -132,6 +135,6 @@
         private GroupBox gbxFilterName;
         private TextBox tbxFilterName;
         private Label lblFilterSearch;
-        private DataGridView dataGridView1;
+        private DataGridView dgwProducts;
     }
 }
